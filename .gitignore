@@ -1,2 +1,6 @@
 test/
 summary.txt
+.venv/
+__pycache__/
+*.egg*/
+dist/

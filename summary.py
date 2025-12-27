@@ -112,14 +112,14 @@ def write_summary_output(article_counter, citation_counter, max_citation_tracker
 
     print(f"\n✅ Results written to {output_path}")
 
-if __name__ == "__main__":
+def main(argv=None):
     parser = argparse.ArgumentParser(description="Count and summarize sources from CSV columns.")
     parser.add_argument("--files", nargs='+', help="List of CSV file paths or folder names")
     parser.add_argument("--column", help="Name of the column to analyze (e.g., Journal, Authors, etc.)")
     parser.add_argument("--split", help="Delimiter to split entries (e.g., '; ' for author lists)", default=None)
     parser.add_argument("--sortby", help="Sort by: articles (default), total (citations), or avg (average citations)")
 
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     file_paths, column_name, split_delimiter, sort_by = get_input_or_prompt(args)
 
     try:
@@ -157,3 +157,7 @@ if __name__ == "__main__":
 
     except Exception as e:
         print(f"❌ Error: {e}")
+
+
+if __name__ == "__main__":
+    main()
