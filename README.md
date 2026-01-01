@@ -27,11 +27,15 @@ No external libraries required — works with standard Python 3.
 You can run the script in **two ways**:
 
 ---
+First, install via 
+```bash
+pip install csv-citation counter
+```
 
 ### ✅ Option 1: Command Line Arguments
 
 ```bash
-python script.py \
+csv-citation-counter \
   --files data/file1.csv data/file2.csv \
   --column "Authors" \
   --split "; " \
